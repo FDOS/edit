@@ -1,0 +1,65 @@
+FreeDOS Edit 0.7b
+
+Based on DFLAT TUI toolkit as described in Dr. Dobbs Journal (DDJ)
+See DFLAT.TXT for more information.
+
+Compiling:
+Tested with Borland's Turbo C 2.01 (TC2), Turbo C++ 1.01 (TC++1), 
+Turbo C/C++ 3.0 (TC3), and Borland C/C++ 3.1 (TC3/BC3)
+Should also work with later versions.
+
+QUICKSTART:
+- flicker control in video.c used assembly language, removed this.
+  TASM is no longer needed.
+- calendar "day of week" calculations and other mktime() things
+  are now done by a builtin function. Turbo C 2.01 did not have
+  mktime and you had to compile without calendar there formerly.
+  The strftime() function is no longer necessary either.
+- you can now (EDIT 0.7) use either the old shift-ins/del, ctrl-ins
+  and alt-backspace or the new ctrl-v/x, ctrl-c and ctrl-z keys.
+  Their meanings are, respectively: paste, cut, copy, undo. The
+  ctrl-ins and alt-backspace keys do not work on XT 84 key systems.
+- the /B (force monochrome) and /H (force high resolution mode)
+  options now work (EDIT 0.7b) :-). You also have /R global read-
+  only mode now, inspired by Joe's EDIT 0.8 / 0.81 / 0.82 version.
+
+Details:
+
+To compile, 1st edit MAKEFILE to match your compiler, followed by
+running 'make'.  You may wish to then run clean to remove object
+files and lib files, the executables (*.exe) will still be available.
+(If compiling with TC3 or earlier? under NT, you may need to ensure
+your environment space is not to cluttered, i.e. unset unneeded
+environment variables, e.g. 'set PROCESSOR_IDENTIER=', etc. before make.)
+
+Once compiled you may wish to compress with an executable compressor
+such as UPX.  If upx.exe is in your path, after make or instead of
+'make all' you may run 'make upx' to build and then compress edit.exe
+
+
+Known Issues:
+
+- When reading or writing a file, tabs are converted to spaces. Since
+  0.6d, you can select to read and keep tabs as normal unexpanded chars.
+
+- The beep() function in console.c produces warnings with TC3 if outp
+  macro is defined (you can #undef outp to remove them for TC3, but
+  TC++1 does not have an outp function only the macro). Very lowlevel!
+
+- No support for Ctrl-Del in 0.6a..e series and 0.7a..b series.
+  No support for Alt-BackSpace in 0.6a..e series and 0.7, fixed in 0.7a.
+  Characters 0x89 and 0x8c (\t and \f | 0x80) were treated specially in
+  the display code, a leftover from special-tab mode of Joe's EDIT 0.6-
+  0.8x, fixed in 0.7c (edit 0.6a..0.7c does not use special-tab mode).
+
+- See http://www.freedos.org/bugs/bugzilla/ to find or report other bugs!
+
+20021129 (describing 0.5d)
+20031118 (describing 0.6b)
+20031128 (describing 0.6c)
+20031129 (describing 0.6d)
+20031201 (describing 0.6e)
+20031202 (describing 0.7)
+20042301 (describing 0.7a)
+20052504 (describing 0.7b)
+20051405 (describing 0.7c)

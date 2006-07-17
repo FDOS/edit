@@ -1,0 +1,18 @@
+Begin3
+Title:          Edit (Eric's spin-off version)
+Version:        0.7d (07/22/2005)
+Entered-date:   11/29/2002
+Description:    FreeDOS improved clone of MS-DOS Edit
+Keywords:       Edit Editor
+Author:         Shaun Raven <shaun@cmlmicro.co.uk>
+Maintained-by:  Eric Auer <eric (#) coli.uni-sb.de>
+Primary-site:   http://www.coli.uni-sb.de/~eric/stuff/soft/by-others/
+Alternate-site: http://www.freedos.org/
+Original-site:  http://freespace.virgin.net/shaun.raven/
+Platforms:      DOS (Turbo C/Borland C)
+Copying-policy: GPL
+End
+
+Normal-EDIT-Maintained-by: Joe Cosentino <onehardmarine@attbi.com>
+Normal-EDIT-Primary-site:  http://www.geocities.com/xsaintx69/freedos/
+
