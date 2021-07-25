@@ -379,7 +379,7 @@ static void near collect_events(void)
 
     /* -------- test for a clock event (one/second) ------- */
     if (timed_out(clocktimer))    {
-        struct country thiscountry; /* country support new 0.7a */
+        struct COUNTRY thiscountry; /* country support new 0.7a */
         time_t t = time(NULL);	/* the current time */
         char timesep = ':';	/* default 12:12:12am separator */
         int ampmflag = 1;
